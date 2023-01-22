@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "520585701732",
+    "project_id": "motionproject-93826",
+    "storage_bucket": "motionproject-93826.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:520585701732:android:42189965650f9dd91fb271",
+        "android_client_info": {
+          "package_name": "com.example.tugasbnv"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "520585701732-amtfe6dpur2l2t87sfiqgmfmdtkjvco0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFoqWIqbVdhcdQct9FMu5G8rievHQ_ef4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "520585701732-amtfe6dpur2l2t87sfiqgmfmdtkjvco0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
