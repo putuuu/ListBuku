@@ -9,15 +9,27 @@
         android:id="@+id/action_add"
         android:name="com.example.tugasbnv.ui.add"
         android:label="fragment_add"
-        tools:layout="@layout/fragment_add" />
+        tools:layout="@layout/fragment_add" >
+        <action
+            android:id="@+id/action_action_add_to_action_dashboard"
+            app:destination="@id/action_dashboard" />
+    </fragment>
     <fragment
         android:id="@+id/action_dashboard"
         android:name="com.example.tugasbnv.ui.dashboard"
         android:label="fragment_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_action_dashboard_to_action_account"
+            app:destination="@id/action_account" />
+    </fragment>
     <fragment
         android:id="@+id/action_account"
         android:name="com.example.tugasbnv.ui.account"
         android:label="fragment_account"
-        tools:layout="@layout/fragment_account" />
+        tools:layout="@layout/fragment_account" >
+        <action
+            android:id="@+id/action_action_account_to_action_add"
+            app:destination="@id/action_add" />
+    </fragment>
 </navigation>
