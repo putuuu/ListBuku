@@ -3,25 +3,21 @@ package com.example.tugasbnv.ui
 import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.FrameLayout
-import androidx.navigation.fragment.findNavController
+import android.widget.SearchView
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.tugasbnv.MainActivity
 import com.example.tugasbnv.R
 import com.example.tugasbnv.adapter.RecycleBukuAdapter
 import com.example.tugasbnv.model.Buku
+import com.google.android.material.snackbar.Snackbar.make
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.ktx.Firebase
+import java.util.*
 
 class dashboard : Fragment() {
 
@@ -45,6 +41,7 @@ class dashboard : Fragment() {
         db = FirebaseFirestore.getInstance()
         val uid = FirebaseAuth.getInstance().currentUser!!.uid
         val usersRef = db.collection("users").document(uid)
+        val search = view.findViewById<SearchView>(R.id.searchView)
 
         usersRef.collection("books").get()
             .addOnSuccessListener { result ->
@@ -60,8 +57,41 @@ class dashboard : Fragment() {
                 Log.w(TAG, "Error getting documents.", exception)
             }
 
+        search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(s: String): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(s: String): Boolean {
+                filterList(s)
+                return true
+            }
+        })
+
         rv.layoutManager = LinearLayoutManager(context)
         return view
+    }
+
+    private fun filterList(s: String) {
+        var filterList = arrayListOf<Buku>()
+        if (s.isEmpty()) {
+            filterList = books
+        } else {
+            for (buku in books) {
+                if (buku.Judul.lowercase().contains(s.lowercase(Locale.getDefault()))) {
+                    filterList.add(buku)
+                }
+                if (buku.Pengarang.lowercase().contains(s.lowercase(Locale.getDefault()))){
+                    filterList.add(buku)
+                }
+            }
+        }
+        if (filterList.isEmpty()) {
+            Toast.makeText(context, "book not found", Toast.LENGTH_SHORT).show()
+        } else {
+            rv.adapter = RecycleBukuAdapter(filterList)
+        }
+
     }
 
 
