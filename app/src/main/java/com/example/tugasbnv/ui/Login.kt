@@ -69,7 +69,7 @@ class Login : AppCompatActivity() {
                             }
                     }else {
                         Log.w(TAG, "User login failed", task.exception)
-                        Toast.makeText(baseContext, "Incorrect email or password",
+                        Toast.makeText(baseContext, "Incorrect email, username or password",
                             Toast.LENGTH_SHORT).show()
                     }
                 }
