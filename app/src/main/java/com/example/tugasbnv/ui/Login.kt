@@ -16,6 +16,7 @@ import com.example.tugasbnv.model.Buku
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
+@Suppress("OVERRIDE_DEPRECATION")
 class Login : AppCompatActivity() {
     val firebaseauth = FirebaseAuth.getInstance()
     val db = FirebaseFirestore.getInstance()
@@ -99,4 +100,5 @@ class Login : AppCompatActivity() {
         }
         return password
     }
+
 }

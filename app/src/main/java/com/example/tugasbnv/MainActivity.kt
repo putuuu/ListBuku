@@ -18,4 +18,5 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.setupWithNavController(fragmentLayout.findNavController())
 
     }
+
 }
