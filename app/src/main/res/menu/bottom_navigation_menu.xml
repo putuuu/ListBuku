@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+    
     <item
         android:id="@+id/action_add"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_dashboard_customize_24"
-        android:title="@string/add" />
+        android:title="Add" />
     <item
         android:id="@+id/action_dashboard"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_dashboard_24"
-        android:title="@string/dashboard" />
+        android:title="Dashboard" />
     <item
         android:id="@+id/action_account"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_account_box_24"
-        android:title="account"/>
+        android:title="Account"/>
 
 </menu>

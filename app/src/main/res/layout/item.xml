@@ -5,34 +5,52 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp">
+
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp">
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_rectangle_24" />
 
         <TextView
             android:id="@+id/txt_judul"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/poppinsbold"
+            android:textColor="#1371be"
             android:text="Judul Buku"
             android:textSize="21sp"
             android:textStyle="bold"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="16dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/txt_pengarang"
-            android:fontFamily="@font/poppinsregular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/txt_judul"
-            android:layout_marginTop="8dp"
             android:ellipsize="end"
+            android:textColor="#1371be"
+            android:fontFamily="@font/poppinsregular"
             android:maxLines="3"
             android:text="pengarang"
             android:textSize="13sp"
-            app:layout_constraintTop_toBottomOf="@+id/txt_judul"
-            tools:layout_editor_absoluteX="16dp" />
+            app:layout_constraintStart_toStartOf="@+id/txt_judul"
+            app:layout_constraintTop_toBottomOf="@+id/txt_judul" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

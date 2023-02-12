@@ -2,16 +2,17 @@ package com.example.tugasbnv.ui
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.example.tugasbnv.R
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+
 
 class add : Fragment() {
 
@@ -56,7 +57,8 @@ class add : Fragment() {
                 eJudul.setText("")
                 ePengarang.setText("")
                 eJudul.requestFocus()
-                Toast.makeText(tambah.context, "Buku ditambahkan", Toast.LENGTH_SHORT).show()
+                val mySnackbar: Snackbar = Snackbar.make(view, "Book added", 1000)
+                mySnackbar.show()
             }
 
         }
