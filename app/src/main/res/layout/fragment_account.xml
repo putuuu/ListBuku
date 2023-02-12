@@ -48,12 +48,14 @@
             app:layout_constraintStart_toEndOf="@+id/textView14"
             app:layout_constraintTop_toTopOf="@+id/textView14" />
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imageView2"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="128dp"
-            android:src="@drawable/ic_baseline_rectangle_24"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginTop="108dp"
+            android:src="@drawable/ic_baseline_account_circle_24"
+            app:civ_border_color="#1371be"
+            app:civ_border_width="2dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -62,7 +64,7 @@
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/poppinsbold"
             android:text="username"
             android:textColor="#1371be"
