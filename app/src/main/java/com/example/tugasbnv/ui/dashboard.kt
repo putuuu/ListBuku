@@ -15,11 +15,13 @@ import com.example.tugasbnv.MainActivity
 import com.example.tugasbnv.R
 import com.example.tugasbnv.adapter.RecycleBukuAdapter
 import com.example.tugasbnv.model.Buku
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 
 class dashboard : Fragment() {
 
@@ -41,9 +43,10 @@ class dashboard : Fragment() {
         val view =  inflater.inflate(R.layout.fragment_dashboard, container, false)
         rv = view.findViewById(R.id.recyclerview)
         db = FirebaseFirestore.getInstance()
-        val usersRef = db.collection("Buku")
+        val uid = FirebaseAuth.getInstance().currentUser!!.uid
+        val usersRef = db.collection("users").document(uid)
 
-        usersRef.get()
+        usersRef.collection("books").get()
             .addOnSuccessListener { result ->
                 for (document in result) {
                     val judul = document.get("Judul").toString()

@@ -11,4 +11,10 @@
         android:enabled="true"
         android:icon="@drawable/ic_baseline_dashboard_24"
         android:title="@string/dashboard" />
+    <item
+        android:id="@+id/action_account"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_account_box_24"
+        android:title="account"/>
+
 </menu>
